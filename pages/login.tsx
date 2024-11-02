@@ -31,9 +31,9 @@ export default function LoginPage() {
     <div className={styles.loginContainer}>
       <div className={styles.loginText}>
         <h1>
-          Sign In<br />
+          Welcome Back.<br />
           <span className={styles.subtitle}>
-            Please enter your details.
+            Please enter your user profile.
           </span>
         </h1>
       </div>
