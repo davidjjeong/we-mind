@@ -7,6 +7,7 @@ const raleway = Raleway({
 });
 
 interface Props {
+  id?: string;
   borderWidth?: string;
   borderColor?: string;
   bgColor?: string;
@@ -17,9 +18,11 @@ interface Props {
   radius?: string;
   onClick?: () => void;
   children?: React.ReactNode;
+  type?: string;
 }
 
 const Button: React.FC<Props> = ({
+  id,
   borderWidth,
   borderColor,
   bgColor,
@@ -29,11 +32,14 @@ const Button: React.FC<Props> = ({
   width,
   radius,
   onClick,
-  children
+  children,
+  type
 }) => {
   return (
     <button
+      id={id}
       className={raleway.className}
+      type={type}
       style={{
         borderWidth: borderWidth,
         borderColor: borderColor,

@@ -34,3 +34,7 @@ label.container{
   height: 55px;
   border-radius: 1.5rem;
 }
+
+#submitBtn {
+  margin-top: 25px;
+}

@@ -1,5 +1,7 @@
 import { FormEvent } from 'react';
 import { useRouter } from 'next/router';
+import { FaArrowCircleRight } from "react-icons/fa";
+import Button from '../components/CustomButtonComponent';
 import styles from "../styles/Login.module.css";
 
 export default function LoginPage() {
@@ -44,9 +46,17 @@ export default function LoginPage() {
           Password:
           <input id={styles.loginElem} type="password" name="password" placeholder="Password" required />
         </label>
-        <button type="submit">
-          Login
-        </button>
+        <Button
+          id={styles.submitBtn}
+          borderWidth="0px"
+          bgColor="#5b2fe8"
+          fontColor="#FFF"
+          fontSize="1.2rem"
+          height="55px"
+          radius="1.5rem"
+          children="Sign in"
+          type="submit"
+        />
       </form>
     </div>
   )
