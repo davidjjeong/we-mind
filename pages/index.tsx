@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           radius="1.5rem"
           children="LOGIN"
           onClick={() => {
-            window.location.href = "/api/auth/login";
+            window.location.href = "/login";
           }}
         />
       </div>
