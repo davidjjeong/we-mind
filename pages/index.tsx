@@ -30,7 +30,12 @@ const Home: NextPage = () => {
       </div>
       <p className={styles.register}>
         Don't have an account? &nbsp;
-        <span className={styles.em}>
+        <span 
+          className={styles.em}
+          onClick={() => {
+            window.location.href = "/signup";
+          }}
+        >
           Sign Up
         </span>
       </p>

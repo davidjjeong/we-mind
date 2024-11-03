@@ -1,12 +1,11 @@
 import { FormEvent } from 'react';
 import { useRouter } from 'next/router';
-import { FaArrowCircleRight } from "react-icons/fa";
 import Button from '../components/CustomButtonComponent';
 import styles from "../styles/Login.module.css";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const router = useRouter()
-
+  
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
@@ -14,26 +13,26 @@ export default function LoginPage() {
     const email = formData.get('email')
     const password = formData.get('password')
 
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     })
 
-    //if (response.ok) {
-      //router.push('/profile')
-    //} else {
-      // Handle errors
-    //}
+    if (response.ok) {
+      router.push('/profile')
+    } else {
+      console.log("Signup failed")
+    }
   }
-
+  
   return (
     <div className={styles.loginContainer}>
       <div className={styles.loginText}>
         <h1>
-          Welcome Back.<br />
+          Join WeMind.<br />
           <span className={styles.subtitle}>
-            Please enter your user profile.
+            One step towards a healthier you.
           </span>
         </h1>
       </div>
@@ -54,7 +53,7 @@ export default function LoginPage() {
           fontSize="1.2rem"
           height="55px"
           radius="1.5rem"
-          children="Sign in"
+          children="Sign up"
           type="submit"
         />
       </form>
